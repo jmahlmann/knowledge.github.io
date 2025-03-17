@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#secure-shell-ssh-protocol" class="md-skip">
+        <a href="#basic-shell-commands" class="md-skip">
           Skip to content
         </a>
       
@@ -360,6 +360,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#basic-shell-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Shell Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#secure-shell-ssh-protocol" class="md-nav__link">
     <span class="md-ellipsis">
       Secure Shell (SSH) Protocol
@@ -509,6 +518,7 @@
   <h1>HPC Basics</h1>
 
 <p>Here, you will learn essential skills for working with performance-optimized computing resources. We will guide you through making your first SSH connection to a remote cluster, navigating file systems, and optimizing your workflow for maximum efficiency. Do not worry if it seems overwhelming at first; we will break down each concept into manageable steps and provide hands-on examples to help you build routines. </p>
+<h3 id="basic-shell-commands">Basic Shell Commands</h3>
 <h3 id="secure-shell-ssh-protocol">Secure Shell (SSH) Protocol</h3>
 <p>SSH (Secure Shell) is a network protocol that provides a secure way to access and manage remote computers by establishing an encrypted connection between client and server. To set it up on your local machine, you can go through the following steps (see also other <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">online resources</a>).</p>
 <ol>
@@ -522,7 +532,32 @@ This generates a new SSH key using the provided email address as a label. When p
 <p><strong>Using SSH keys to access servers without password.</strong> In a terminal window on your local machine, run the following command to copy your SSH key to a remote host:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/mykey<span class="w"> </span>user@host
 </span></code></pre></div>
-<p>You will be prompted to enter the remote host's access data.</p>
+<p>You will be prompted to enter the remote host's access data. After the succesfull ssh-key communication, future logins should not require additional password requests. However, systems may have special security requirements.</p>
+<div class="admonition note">
+<p class="admonition-title">Dartmouth Discovery Cluster</p>
+<p>Dartmouth infrastructure has some <a href="https://services.dartmouth.edu/TDClient/1806/Portal/KB/ArticleDet?ID=89203">caveats</a> when using ssh-keys for remote connections.</p>
+</div>
+</li>
+<li>
+<p><strong>Create aliases for remote hosts.</strong> It can be a substantial shortcut to abbreviate remote host names and addresses. Open a terminal window in your home directory and access the following file:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.ssh/config
+</span></code></pre></div>
+<p>In this file, you can set up aliases for remote hosts. For basic functionality, use:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Host<span class="w"> </span>alias_name
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>HostName<span class="w"> </span>host_address
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>User<span class="w"> </span>user_name
+</span></code></pre></div>
+<p>You can now access the remote host by using the alias </p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ssh<span class="w"> </span>alias_name
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Dartmouth Discovery Cluster</p>
+<p>For Dartmouth infrastructure, the alias could read:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Host<span class="w"> </span>discovery
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span>HostName<span class="w"> </span>discovery.dartmouth.edu
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>User<span class="w"> </span>netID
+</span></code></pre></div></p>
+</div>
 </li>
 </ol>
 
