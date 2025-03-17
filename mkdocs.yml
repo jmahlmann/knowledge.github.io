@@ -1,4 +1,5 @@
 site_name: Knowledge Base for Computational Plasma Physics
 site_url: https://jmahlmann.github.io/knowledge.github.io/
+
 theme:
-  name: mkdocs
+  name: material
