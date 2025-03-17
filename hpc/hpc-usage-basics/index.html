@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://jmahlmann.github.io/knowledge.github.io/software/entity/">
+        <link rel="canonical" href="https://jmahlmann.github.io/knowledge.github.io/hpc/hpc-usage-basics/">
       
       
-        <link rel="prev" href="../../hpc/hpc-usage-basics/">
+        <link rel="prev" href="../discovery-getting-started/">
       
       
-        <link rel="next" href="../../tags/">
+        <link rel="next" href="../../software/entity/">
       
       
       <link rel="icon" href="../../media/images/logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>entity - Computational Plasma Physics @Dartmouth Knowledge Base</title>
+        <title>HPC Basics - Computational Plasma Physics @Dartmouth Knowledge Base</title>
       
     
     
@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#secure-shell-ssh-protocol" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -104,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              entity
+              HPC Basics
             
           </span>
         </div>
@@ -242,8 +247,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -254,11 +261,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -273,7 +280,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             High-Performance Computing (HPC)
@@ -287,7 +294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hpc/discovery-getting-started/" class="md-nav__link">
+      <a href="../discovery-getting-started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -306,10 +313,29 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../hpc/hpc-usage-basics/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    HPC Basics
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -319,6 +345,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#secure-shell-ssh-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure Shell (SSH) Protocol
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -335,8 +388,6 @@
       
   
   
-    
-  
   
   
     
@@ -347,11 +398,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -366,7 +417,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Software
@@ -377,17 +428,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../software/entity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -397,7 +441,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -445,9 +488,43 @@
                 
                   
 
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <a href="../../tags/#tag:beginner" class="md-tag">Beginner</a>
+      
+    
+      
+      
+      
+        <a href="../../tags/#tag:hpc" class="md-tag">HPC</a>
+      
+    
+  </nav>
 
 
-  <h1>entity</h1>
+
+  <h1>HPC Basics</h1>
+
+<p>Here, you will learn essential skills for working with performance-optimized computing resources. We will guide you through making your first SSH connection to a remote cluster, navigating file systems, and optimizing your workflow for maximum efficiency. Do not worry if it seems overwhelming at first; we will break down each concept into manageable steps and provide hands-on examples to help you build routines. </p>
+<h3 id="secure-shell-ssh-protocol">Secure Shell (SSH) Protocol</h3>
+<p>SSH (Secure Shell) is a network protocol that provides a secure way to access and manage remote computers by establishing an encrypted connection between client and server. To set it up on your local machine, you can go through the following steps (see also other <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">online resources</a>).</p>
+<ol>
+<li>
+<p><strong>Setting up an SSH key locally.</strong> In a terminal window on your local machine, run the following command to set up an shh key:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
+</span></code></pre></div>
+This generates a new SSH key using the provided email address as a label. When prompted to "Enter a file in which to save the key," press Enter to accept the default file location. You can choose a passphrase to secure your SSH keys.</p>
+</li>
+<li>
+<p><strong>Using SSH keys to access servers without password.</strong> In a terminal window on your local machine, run the following command to copy your SSH key to a remote host:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/mykey<span class="w"> </span>user@host
+</span></code></pre></div>
+<p>You will be prompted to enter the remote host's access data.</p>
+</li>
+</ol>
 
 
 
@@ -455,7 +532,8 @@
 
 
 
-
+  
+  
 
 
 
