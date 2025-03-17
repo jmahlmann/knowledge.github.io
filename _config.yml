@@ -1,2 +1,4 @@
-remote_theme: "jekyll/minima@1e8a445"
+remote_theme: "jekyll/minimai"
+title: [The title of your site]
+description: [A short description of your site's purpose]
 
