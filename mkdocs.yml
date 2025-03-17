@@ -3,4 +3,4 @@ site_url: https://jmahlmann.github.io/knowledge.github.io/
 
 theme:
   name: material
-  # logo: assets/logo.svg
+  logo: media/images/logo.png
