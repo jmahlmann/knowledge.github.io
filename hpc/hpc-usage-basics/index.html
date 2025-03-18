@@ -377,6 +377,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#transfering-files-with-rsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfering files with rsync
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -468,6 +477,75 @@
   
   
   
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Analysis & Visualization
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Data Analysis & Visualization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analysis/python-essentials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    entity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../tags/" class="md-nav__link">
         
@@ -519,6 +597,78 @@
 
 <p>Here, you will learn essential skills for working with performance-optimized computing resources. We will guide you through making your first SSH connection to a remote cluster, navigating file systems, and optimizing your workflow for maximum efficiency. Do not worry if it seems overwhelming at first; we will break down each concept into manageable steps and provide hands-on examples to help you build routines. </p>
 <h3 id="basic-shell-commands">Basic Shell Commands</h3>
+<p>In this section, we'll explore essential command-line interface (CLI) commands that serve as the building blocks for navigating and manipulating your system through the terminal.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cd</code></td>
+<td>Change into another directory</td>
+<td><code>cd -</code></td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td>Path of the user's home directory</td>
+<td><code>cd ~</code></td>
+</tr>
+<tr>
+<td><code>ls</code></td>
+<td>List all files and directories in current path</td>
+<td><code>ls</code></td>
+</tr>
+<tr>
+<td><code>pwd</code></td>
+<td>Displays the current path</td>
+<td><code>pwd</code></td>
+</tr>
+<tr>
+<td><code>mkdir</code></td>
+<td>Create a new directory</td>
+<td><code>mkdir new_directory</code></td>
+</tr>
+<tr>
+<td><code>rm</code></td>
+<td>Remove files or directories</td>
+<td><code>rm file</code></td>
+</tr>
+<tr>
+<td><code>rm -rf</code></td>
+<td>Force remove files or directories (<strong>handle with care</strong>)</td>
+<td><code>rm -rf file</code></td>
+</tr>
+<tr>
+<td><code>cp</code></td>
+<td>Copy files</td>
+<td><code>cp file1 file2</code></td>
+</tr>
+<tr>
+<td><code>mv</code></td>
+<td>Move files (can be used to rename files)</td>
+<td><code>mv file1 directory/</code></td>
+</tr>
+<tr>
+<td><code>du</code></td>
+<td>Show directory contents and storage size</td>
+<td><code>du -h</code></td>
+</tr>
+<tr>
+<td><code>ln -s</code></td>
+<td>Create a symbolic link</td>
+<td><code>ln -s /path/to/source /path/to/link</code></td>
+</tr>
+</tbody>
+</table>
+<p>Take some time to familiarize yourself with these basic CLI commands and try them in practice. They will help you efficiently navigate and work within the cluster environment.</p>
+<div class="admonition note">
+<p class="admonition-title">Dartmouth Discovery Cluster</p>
+<p>To familiarize yourself with these basic commands, navigate to your group's lab space on Dartmouth's discovery cluster. Create a symbolic link to the lab space in your home directory.</p>
+</div>
 <h3 id="secure-shell-ssh-protocol">Secure Shell (SSH) Protocol</h3>
 <p>SSH (Secure Shell) is a network protocol that provides a secure way to access and manage remote computers by establishing an encrypted connection between client and server. To set it up on your local machine, you can go through the following steps (see also other <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">online resources</a>).</p>
 <ol>
@@ -560,6 +710,13 @@ This generates a new SSH key using the provided email address as a label. When p
 </div>
 </li>
 </ol>
+<h3 id="transfering-files-with-rsync">Transfering files with <em>rsync</em></h3>
+<p><em>Rsync</em> (remote synchronization) is a powerful command-line utility for efficiently transferring and synchronizing files between different locations, whether they are on your local machine or across remote systems. This tool is particularly valuable because it uses a delta-transfer algorithm that only copies the differences between source and destination files, significantly reducing the amount of data that needs to be transferred. We will explore how to use rsync's basic features and some of its most useful advanced options. The basic syntax is as follows:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>rsync<span class="w"> </span>-arv<span class="w"> </span>/path/to/origin/directory<span class="w"> </span>path/to/destination/directory
+</span></code></pre></div>
+<p>The option -arv will use archive mode to preserve permissions (<em>a</em>), recursively (<em>r</em>) loop through sub-directories, and provide verbose (<em>v</em>) output. Each path can be a local or remote paths, making <em>rsync</em> an important tool to transfer data between clusters and our local resources. The following option provides the transfer progress for each file:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>rsync<span class="w"> </span>-arv<span class="w"> </span>--progress<span class="w"> </span>/path/to/origin/directory<span class="w"> </span>path/to/destination/directory
+</span></code></pre></div>
 
 
 

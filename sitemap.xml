@@ -2,22 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://jmahlmann.github.io/knowledge.github.io/</loc>
-         <lastmod>2025-03-17</lastmod>
+         <lastmod>2025-03-18</lastmod>
     </url>
     <url>
          <loc>https://jmahlmann.github.io/knowledge.github.io/tags/</loc>
-         <lastmod>2025-03-17</lastmod>
+         <lastmod>2025-03-18</lastmod>
+    </url>
+    <url>
+         <loc>https://jmahlmann.github.io/knowledge.github.io/data-analysis/python-essentials/</loc>
+         <lastmod>2025-03-18</lastmod>
     </url>
     <url>
          <loc>https://jmahlmann.github.io/knowledge.github.io/hpc/discovery-getting-started/</loc>
-         <lastmod>2025-03-17</lastmod>
+         <lastmod>2025-03-18</lastmod>
     </url>
     <url>
          <loc>https://jmahlmann.github.io/knowledge.github.io/hpc/hpc-usage-basics/</loc>
-         <lastmod>2025-03-17</lastmod>
+         <lastmod>2025-03-18</lastmod>
     </url>
     <url>
          <loc>https://jmahlmann.github.io/knowledge.github.io/software/entity/</loc>
-         <lastmod>2025-03-17</lastmod>
+         <lastmod>2025-03-18</lastmod>
     </url>
 </urlset>
