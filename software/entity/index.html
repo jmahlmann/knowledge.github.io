@@ -598,7 +598,7 @@
 <p><a href="https://github.com/entity-toolkit/entity">Entity</a> is a cutting-edge particle-in-cell (PIC) code that serves as an excellent tool for studying plasma physics in astrophysical environments. What makes Entity particularly special is its coordinate-agnostic design and modern C++17 implementation. Entity offers several advantages: it's highly modular, works efficiently across different computing architectures (both CPUs and GPUs), and comes with a Python library called nt2py for easy data analysis and visualization. The code's flexible design and support for various output formats make it an ideal platform for learning about advanced plasma physics simulations while using industry-standard tools and practices. Check out the <a href="https://entity-toolkit.github.io/wiki/">entity wiki</a> for all questions at different levels! </p>
 <h3 id="entity-on-dartmouths-discovery-cluster">Entity on Dartmouth's Discovery Cluster</h3>
 <p>We provide libraries to fulfill entity's <a href="https://entity-toolkit.github.io/wiki/getting-started/dependencies/">dependencies</a> on Discovery. You can load the required modules by running the following in your Discovery shell:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module<span class="w"> </span>use<span class="w"> </span>--append<span class="w"> </span>/dartfs-hpc/rc/home/7/f007gj7/epaco/.mods
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module<span class="w"> </span>use<span class="w"> </span>--append<span class="w"> </span>/dartfs/rc/lab/E/EPaCO/.mods
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>module<span class="w"> </span>load<span class="w"> </span>entity/cuda/mpi/a100
 </span></code></pre></div>
 <div class="admonition note">
@@ -624,7 +624,7 @@
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">#SBATCH --time=00:20:00</span>
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>module<span class="w"> </span>use<span class="w"> </span>--append<span class="w"> </span>/dartfs-hpc/rc/home/7/f007gj7/epaco/.mods
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>module<span class="w"> </span>use<span class="w"> </span>--append<span class="w"> </span>/dartfs/rc/lab/E/EPaCO/.mods
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>module<span class="w"> </span>load<span class="w"> </span>entity/cuda/mpi/a100
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">1</span><span class="w"> </span>./entity.xc<span class="w"> </span>-input<span class="w"> </span>...
