@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#entity-on-dartmouths-discovery-cluster" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -387,6 +392,18 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    entity
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -397,6 +414,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#entity-on-dartmouths-discovery-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entity on Dartmouth's Discovery Cluster
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -461,7 +504,7 @@
         
   
   <span class="md-ellipsis">
-    entity
+    Python Essentials
     
   </span>
   
@@ -514,10 +557,55 @@
                 
                   
 
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <a href="../../tags/#tag:research-tools" class="md-tag">Research Tools</a>
+      
+    
+  </nav>
+
 
 
   <h1>entity</h1>
 
+<p><a href="https://github.com/entity-toolkit/entity">Entity</a> is a cutting-edge particle-in-cell (PIC) code that serves as an excellent tool for studying plasma physics in astrophysical environments. What makes Entity particularly special is its coordinate-agnostic design and modern C++17 implementation. Entity offers several advantages: it's highly modular, works efficiently across different computing architectures (both CPUs and GPUs), and comes with a Python library called nt2py for easy data analysis and visualization. The code's flexible design and support for various output formats make it an ideal platform for learning about advanced plasma physics simulations while using industry-standard tools and practices. Check out the <a href="https://entity-toolkit.github.io/wiki/">entity wiki</a> for all questions at different levels! </p>
+<h3 id="entity-on-dartmouths-discovery-cluster">Entity on Dartmouth's Discovery Cluster</h3>
+<p>We provide libraries to fulfill entity's <a href="https://entity-toolkit.github.io/wiki/getting-started/dependencies/">dependencies</a> on Discovery. You can load the required modules by running the following in your Discovery shell:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module<span class="w"> </span>use<span class="w"> </span>--append<span class="w"> </span>/dartfs-hpc/rc/home/7/f007gj7/epaco/.mods
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>module<span class="w"> </span>load<span class="w"> </span>entity/cuda/mpi/a100
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Discovery Cluster</p>
+<p>If you do not have access to the <strong>EPaCO</strong> lab space, please check our groups' <a href="../../hpc/discovery-getting-started/">allocations and user policies</a>.</p>
+</div>
+<p>To <a href="https://entity-toolkit.github.io/wiki/getting-started/compile-run/">compile entity</a>, follow the standard procedure and add the following specifications to your <em>cmake</em> command:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cmake<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-D<span class="w"> </span><span class="nv">pgen</span><span class="o">=</span>...<span class="w"> </span>-D<span class="w"> </span><span class="nv">output</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">mpi</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span>...<span class="w"> </span><span class="nv">CMAKE_CXX_COMPILER</span><span class="o">=</span>/dartfs-hpc/rc/home/7/f007gj7/epaco/libs/openmpi/bin/mpicxx<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_C_COMPILER</span><span class="o">=</span>/dartfs-hpc/rc/home/7/f007gj7/epaco/libs/openmpi/bin/mpicc
+</span></code></pre></div>
+<p>To <a href="https://entity-toolkit.github.io/wiki/getting-started/compile-run/#running">run the code</a>, you can again follow standard procedures.</p>
+<div class="admonition note">
+<p class="admonition-title">Discovery Cluster</p>
+<p>A typical submit script for Dartmouth infrastructure looks as follows:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">#SBATCH -J job_name</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">#SBATCH --partition gpuq</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">#SBATCH --gres=gpu:1</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1">#SBATCH -o ./entity.out</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">#SBATCH -e ./entity.err</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1">#SBATCH --nodes=1</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1">#SBATCH --ntasks-per-node=1</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">#SBATCH --time=00:20:00</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>module<span class="w"> </span>use<span class="w"> </span>--append<span class="w"> </span>/dartfs-hpc/rc/home/7/f007gj7/epaco/.mods
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>module<span class="w"> </span>load<span class="w"> </span>cuda/12<span class="w"> </span>openmpi/cuda/5.0.6<span class="w"> </span>hdf5/cuda/mpi/1.14.3<span class="w"> </span>kokkos/cuda/mpi/4.5.01<span class="w"> </span>adios2/cuda/mpi/2.10.0
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">1</span><span class="w"> </span>./entity.xc<span class="w"> </span>-input<span class="w"> </span>...
+</span></code></pre></div></p>
+</div>
 
 
 
@@ -525,6 +613,8 @@
 
 
 
+  
+  
 
 
 
