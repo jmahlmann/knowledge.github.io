@@ -620,19 +620,24 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">A100 GPUs</label><label for="__tabbed_2_2">CPUs</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cmake<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-D<span class="w"> </span><span class="nv">pgen</span><span class="o">=</span>...<span class="w"> </span>-D<span class="w"> </span><span class="nv">output</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">mpi</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span>...<span class="w"> </span><span class="nv">CMAKE_CXX_COMPILER</span><span class="o">=</span>/dartfs-hpc/rc/home/7/f007gj7/epaco/libs/openmpi/bin/mpicxx<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_C_COMPILER</span><span class="o">=</span>/dartfs-hpc/rc/home/7/f007gj7/epaco/libs/openmpi/bin/mpicc
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cmake<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-D<span class="w"> </span><span class="nv">pgen</span><span class="o">=</span>...<span class="w"> </span>-D<span class="w"> </span><span class="nv">output</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">mpi</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_CXX_COMPILER</span><span class="o">=</span>/dartfs-hpc/rc/home/7/f007gj7/epaco/libs/openmpi/bin/mpicxx<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_C_COMPILER</span><span class="o">=</span>/dartfs-hpc/rc/home/7/f007gj7/epaco/libs/openmpi/bin/mpicc
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cmake<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-D<span class="w"> </span><span class="nv">pgen</span><span class="o">=</span>...<span class="w"> </span>-D<span class="w"> </span><span class="nv">output</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">mpi</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span>...<span class="w"> </span><span class="nv">CMAKE_CXX_COMPILER</span><span class="o">=</span>/dartfs-hpc/rc/home/7/f007gj7/epaco/libs/openmpi_host/bin/mpicxx<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_C_COMPILER</span><span class="o">=</span>/dartfs-hpc/rc/home/7/f007gj7/epaco/libs/openmpi_host/bin/mpicc
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cmake<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-D<span class="w"> </span><span class="nv">pgen</span><span class="o">=</span>...<span class="w"> </span>-D<span class="w"> </span><span class="nv">output</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">mpi</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_CXX_COMPILER</span><span class="o">=</span>/dartfs-hpc/rc/home/7/f007gj7/epaco/libs/openmpi_host/bin/mpicxx<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_C_COMPILER</span><span class="o">=</span>/dartfs-hpc/rc/home/7/f007gj7/epaco/libs/openmpi_host/bin/mpicc
 </span></code></pre></div>
 </div>
 </div>
 </div>
-<p>To <a href="https://entity-toolkit.github.io/wiki/getting-started/compile-run/#running">run the code</a>, you can again follow standard procedures.</p>
+<p>When setting up the compilation, specify a problem generator, for example <em>srpic/weibel</em>. To <a href="https://entity-toolkit.github.io/wiki/getting-started/compile-run/#running">run the code</a>, you can again follow standard procedures.</p>
 <div class="admonition note">
 <p class="admonition-title">Discovery Cluster</p>
-<p>A typical submit script for Dartmouth infrastructure looks as follows:</p>
+<p>You typically need three things to run a simulation, you can set up all of them in a new folder named suitably for your simulation.</p>
+<ol>
+<li>The executable <em>entity.xc</em>, located in <em>entity/build/src</em>.</li>
+<li>A <em>.toml</em> file for your problem generator, for the weibel setup located in <em>entity/setups/srpic/weibel/weibel.tom</em>.</li>
+<li>A typical submit script for Dartmouth infrastructure looks as follows:</li>
+</ol>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">A100 GPUs</label><label for="__tabbed_3_2">CPUs</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
