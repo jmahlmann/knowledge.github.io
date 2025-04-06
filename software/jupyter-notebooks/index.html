@@ -600,6 +600,10 @@
 <p>Dartmouth research computing <a href="https://services.dartmouth.edu/TDClient/1806/Portal/KB/ArticleDet?ID=124517">documents</a> how to remotely access <em>Jupyter</em> notebooks. In the following, we will review the key steps. In your Discovery shell, activate <em>conda</em>:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">source</span><span class="w"> </span>/optnfs/common/miniconda3/etc/profile.d/conda.sh
 </span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Dartmouth Discovery Cluster</p>
+<p>To avoid this command for each <em>Jupyter</em> instance, you can add it to your <em>~/.bashrc</em> file on Discovery. This environment is set up each time a new shell logs in to the cluster.</p>
+</div>
 <p>First time users should create a new conda environment for using with <em>Jupyter</em> notebooks:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>jupyter<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7<span class="w"> </span>anaconda
 </span></code></pre></div>
@@ -614,7 +618,7 @@
 </span></code></pre></div></p>
 </div>
 <p>To launch a <em>Jupyter</em> notebook, execute the following in your Discovery shell:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>jupyter<span class="w"> </span>notebook<span class="w"> </span>--no-browser
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>jupyter<span class="w"> </span>notebook<span class="w"> </span>--no-browser<span class="w"> </span>--ip<span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-i<span class="k">)</span>
 </span></code></pre></div></p>
 <p>Once the notebook starts, you will receive information about the IP address and port used to connect to the notebook (e.g., of the form <em>127.0.0.1:888x</em>), as well as a token that will be used for secured access.</p>
 <p><strong>In a new shell</strong> on your local machine, establish a new connection to the discovery cluster with additional port forwarding (connecting directly to the <em>Jupyter</em> notebook), for example like:</p>

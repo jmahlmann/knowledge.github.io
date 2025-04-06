@@ -598,37 +598,82 @@
 <p><a href="https://github.com/entity-toolkit/entity">Entity</a> is a cutting-edge particle-in-cell (PIC) code that serves as an excellent tool for studying plasma physics in astrophysical environments. What makes Entity particularly special is its coordinate-agnostic design and modern C++17 implementation. Entity offers several advantages: it's highly modular, works efficiently across different computing architectures (both CPUs and GPUs), and comes with a Python library called nt2py for easy data analysis and visualization. The code's flexible design and support for various output formats make it an ideal platform for learning about advanced plasma physics simulations while using industry-standard tools and practices. Check out the <a href="https://entity-toolkit.github.io/wiki/">entity wiki</a> for all questions at different levels! </p>
 <h3 id="entity-on-dartmouths-discovery-cluster">Entity on Dartmouth's Discovery Cluster</h3>
 <p>We provide libraries to fulfill entity's <a href="https://entity-toolkit.github.io/wiki/getting-started/dependencies/">dependencies</a> on Discovery. You can load the required modules by running the following in your Discovery shell:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">A100 GPUs</label><label for="__tabbed_1_2">CPUs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module<span class="w"> </span>use<span class="w"> </span>--append<span class="w"> </span>/dartfs/rc/lab/E/EPaCO/.mods
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>module<span class="w"> </span>load<span class="w"> </span>entity/cuda/mpi/a100
 </span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>module<span class="w"> </span>use<span class="w"> </span>--append<span class="w"> </span>/dartfs/rc/lab/E/EPaCO/.mods
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>module<span class="w"> </span>load<span class="w"> </span>entity/host/mpi/zen
+</span></code></pre></div>
+</div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Discovery Cluster</p>
 <p>If you do not have access to the <strong>EPaCO</strong> lab space, please check our groups' <a href="../../hpc/discovery-getting-started/">allocations and user policies</a>.</p>
 </div>
 <p>To <a href="https://entity-toolkit.github.io/wiki/getting-started/compile-run/">compile entity</a>, follow the standard procedure and add the following specifications to your <em>cmake</em> command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cmake<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-D<span class="w"> </span><span class="nv">pgen</span><span class="o">=</span>...<span class="w"> </span>-D<span class="w"> </span><span class="nv">output</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">mpi</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span>...<span class="w"> </span><span class="nv">CMAKE_CXX_COMPILER</span><span class="o">=</span>/dartfs-hpc/rc/home/7/f007gj7/epaco/libs/openmpi/bin/mpicxx<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_C_COMPILER</span><span class="o">=</span>/dartfs-hpc/rc/home/7/f007gj7/epaco/libs/openmpi/bin/mpicc
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">A100 GPUs</label><label for="__tabbed_2_2">CPUs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cmake<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-D<span class="w"> </span><span class="nv">pgen</span><span class="o">=</span>...<span class="w"> </span>-D<span class="w"> </span><span class="nv">output</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">mpi</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span>...<span class="w"> </span><span class="nv">CMAKE_CXX_COMPILER</span><span class="o">=</span>/dartfs-hpc/rc/home/7/f007gj7/epaco/libs/openmpi/bin/mpicxx<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_C_COMPILER</span><span class="o">=</span>/dartfs-hpc/rc/home/7/f007gj7/epaco/libs/openmpi/bin/mpicc
 </span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cmake<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-D<span class="w"> </span><span class="nv">pgen</span><span class="o">=</span>...<span class="w"> </span>-D<span class="w"> </span><span class="nv">output</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">mpi</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span>...<span class="w"> </span><span class="nv">CMAKE_CXX_COMPILER</span><span class="o">=</span>/dartfs-hpc/rc/home/7/f007gj7/epaco/libs/openmpi_host/bin/mpicxx<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_C_COMPILER</span><span class="o">=</span>/dartfs-hpc/rc/home/7/f007gj7/epaco/libs/openmpi_host/bin/mpicc
+</span></code></pre></div>
+</div>
+</div>
+</div>
 <p>To <a href="https://entity-toolkit.github.io/wiki/getting-started/compile-run/#running">run the code</a>, you can again follow standard procedures.</p>
 <div class="admonition note">
 <p class="admonition-title">Discovery Cluster</p>
-<p>A typical submit script for Dartmouth infrastructure looks as follows:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="ch">#!/bin/bash</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">#SBATCH -J job_name</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">#SBATCH --partition gpuq</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">#SBATCH --gres=gpu:1</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1">#SBATCH -o ./entity.out</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">#SBATCH -e ./entity.err</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1">#SBATCH --nodes=1</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1">#SBATCH --ntasks-per-node=1</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">#SBATCH --time=00:20:00</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>module<span class="w"> </span>use<span class="w"> </span>--append<span class="w"> </span>/dartfs/rc/lab/E/EPaCO/.mods
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>module<span class="w"> </span>load<span class="w"> </span>entity/cuda/mpi/a100
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">1</span><span class="w"> </span>./entity.xc<span class="w"> </span>-input<span class="w"> </span>...
-</span></code></pre></div></p>
+<p>A typical submit script for Dartmouth infrastructure looks as follows:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">A100 GPUs</label><label for="__tabbed_3_2">CPUs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">#SBATCH -J job_name</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">#SBATCH --partition gpuq</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">#SBATCH --gres=gpu:1</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1">#SBATCH -o ./entity.out</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1">#SBATCH -e ./entity.err</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1">#SBATCH --nodes=1</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1">#SBATCH --ntasks-per-node=1</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1">#SBATCH --time=00:20:00</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>module<span class="w"> </span>use<span class="w"> </span>--append<span class="w"> </span>/dartfs/rc/lab/E/EPaCO/.mods
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>module<span class="w"> </span>load<span class="w"> </span>entity/cuda/mpi/a100
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">1</span><span class="w"> </span>./entity.xc<span class="w"> </span>-input<span class="w"> </span>...
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">#SBATCH -J job_name</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1">#SBATCH --partition standard</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1">#SBATCH -o ./entity.out</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1">#SBATCH -e ./entity.err</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1">#SBATCH --nodes=1</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1">#SBATCH --ntasks-per-node=1</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1">#SBATCH --time=00:20:00</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>module<span class="w"> </span>use<span class="w"> </span>--append<span class="w"> </span>/dartfs/rc/lab/E/EPaCO/.mods
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>module<span class="w"> </span>load<span class="w"> </span>entity/host/mpi/zen
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">1</span><span class="w"> </span>./entity.xc<span class="w"> </span>-input<span class="w"> </span>...
+</span></code></pre></div>
+</div>
+</div>
+</div>
 </div>
 
 
