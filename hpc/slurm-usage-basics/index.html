@@ -8,26 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://jmahlmann.github.io/knowledge.github.io/tags/">
+        <link rel="canonical" href="https://jmahlmann.github.io/knowledge.github.io/hpc/slurm-usage-basics/">
       
       
-        <link rel="prev" href="../data-analysis/python-essentials/">
+        <link rel="prev" href="../hpc-usage-basics/">
       
       
+        <link rel="next" href="../../software/entity/">
       
-      <link rel="icon" href="../media/images/logo.png">
+      
+      <link rel="icon" href="../../media/images/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
     
     
       
-        <title>Tags - Computational Plasma Physics @Dartmouth Knowledge Base</title>
+        <title>Slurm Basics - Computational Plasma Physics @Dartmouth Knowledge Base</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tag:beginner" class="md-skip">
+        <a href="#basic-shell-commands" class="md-skip">
           Skip to content
         </a>
       
@@ -88,9 +90,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Computational Plasma Physics @Dartmouth Knowledge Base" class="md-header__button md-logo" aria-label="Computational Plasma Physics @Dartmouth Knowledge Base" data-md-component="logo">
+    <a href="../.." title="Computational Plasma Physics @Dartmouth Knowledge Base" class="md-header__button md-logo" aria-label="Computational Plasma Physics @Dartmouth Knowledge Base" data-md-component="logo">
       
-  <img src="../media/images/logo.png" alt="logo">
+  <img src="../../media/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -107,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tags
+              Slurm Basics
             
           </span>
         </div>
@@ -210,9 +212,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Computational Plasma Physics @Dartmouth Knowledge Base" class="md-nav__button md-logo" aria-label="Computational Plasma Physics @Dartmouth Knowledge Base" data-md-component="logo">
+    <a href="../.." title="Computational Plasma Physics @Dartmouth Knowledge Base" class="md-nav__button md-logo" aria-label="Computational Plasma Physics @Dartmouth Knowledge Base" data-md-component="logo">
       
-  <img src="../media/images/logo.png" alt="logo">
+  <img src="../../media/images/logo.png" alt="logo">
 
     </a>
     Computational Plasma Physics @Dartmouth Knowledge Base
@@ -227,7 +229,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -245,8 +247,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -259,11 +263,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -278,7 +282,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             High-Performance Computing (HPC)
@@ -292,7 +296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hpc/discovery-getting-started/" class="md-nav__link">
+      <a href="../discovery-getting-started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -314,7 +318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hpc/hpc-usage-basics/" class="md-nav__link">
+      <a href="../hpc-usage-basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -333,10 +337,29 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../hpc/slurm-usage-basics/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Slurm Basics
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -346,6 +369,51 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-shell-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Shell Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-queue-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Queue Output
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commonly-used-sbatch-submit-script-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commonly Used sbatch Submit Script Commands
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -407,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software/entity/" class="md-nav__link">
+      <a href="../../software/entity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -429,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software/jupyter-notebooks/" class="md-nav__link">
+      <a href="../../software/jupyter-notebooks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -498,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-analysis/python-essentials/" class="md-nav__link">
+      <a href="../../data-analysis/python-essentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -524,29 +592,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Tags
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -556,51 +605,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tag:beginner" class="md-nav__link">
-    <span class="md-ellipsis">
-      Beginner
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tag:dartmouth-infrastructure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dartmouth Infrastructure
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tag:research-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Research Tools
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -619,98 +623,201 @@
                 
                   
 
-
-
-  <h1>Tags</h1>
-
-<p>Following is a list of relevant tags:</p>
-
-
-  <h2 id="tag:beginner">
-
-
-<span class="md-tag">Beginner</span></h2>
-  <ul>
+  <nav class="md-tags" >
     
-      <li>
-        <a href="../hpc/discovery-getting-started/">
-          Discovery Cluster
-        </a>
-      </li>
+      
+      
+      
+        <a href="../../tags/#tag:beginner" class="md-tag">Beginner</a>
+      
     
-      <li>
-        <a href="../hpc/hpc-usage-basics/">
-          HPC Basics
-        </a>
-      </li>
+      
+      
+      
+        <a href="../../tags/#tag:research-tools" class="md-tag">Research Tools</a>
+      
     
-      <li>
-        <a href="../hpc/slurm-usage-basics/">
-          Slurm Basics
-        </a>
-      </li>
-    
-    
-  </ul>
+  </nav>
 
 
 
-  <h2 id="tag:dartmouth-infrastructure">
+  <h1>Slurm Basics</h1>
+
+<p>This page introduces basic Slurm commands to help new users get started with job scheduling in high-performance computing (HPC) environments. <a href="https://slurm.schedmd.com/overview.html">Slurm (Simple Linux Utility for Resource Management)</a> is an open-source workload manager designed for Linux clusters of all sizes. It is used to allocate compute resources, schedule jobs, and manage workloads efficiently on shared systems.</p>
+<div class="admonition note">
+<p class="admonition-title">Dartmouth Discovery Cluster</p>
+<p>Check out <a href="https://services.dartmouth.edu/TDClient/1806/Portal/KB/ArticleDet?ID=132625">Dartmouth Discovery's documentation</a> on the Slurm environment.</p>
+</div>
+<h3 id="basic-shell-commands">Basic Shell Commands</h3>
+<p>In this section, we'll explore essential command-line interface (CLI) commands that help is interact with the slurm workload manager.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>squeue</code></td>
+<td>View the status of jobs in the Slurm job queue.</td>
+<td><code>squeue</code></td>
+</tr>
+<tr>
+<td></td>
+<td>Shows an estimate of when pending jobs are expected to start.</td>
+<td><code>squeue --start</code></td>
+</tr>
+<tr>
+<td></td>
+<td>Filter slurm commands by USER_ID (replace with username).</td>
+<td><code>squeue -u USER_ID</code></td>
+</tr>
+<tr>
+<td></td>
+<td>Filter slurm commands by USER_ID (replace with username).</td>
+<td><code>squeue -u USER_ID</code></td>
+</tr>
+<tr>
+<td><code>watch</code></td>
+<td>Continuously runs a command or queuery (here every second).</td>
+<td><code>watch -n1 squeue -u USER_ID</code></td>
+</tr>
+<tr>
+<td><code>sbatch</code></td>
+<td>Submits a job script (specify the name) to the Slurm queue.</td>
+<td><code>sbatch JOB_SCRIPT</code></td>
+</tr>
+<tr>
+<td><code>scancel</code></td>
+<td>Cancel a job from the slurm queue.</td>
+<td><code>scancel JOB_ID</code></td>
+</tr>
+</tbody>
+</table>
+<p>Placeholders like <code>USER_ID</code>, <code>JOB_SCRIPT</code>, and <code>JOB_ID</code> have to be specified for each job and user.</p>
+<h3 id="understanding-queue-output">Understanding Queue Output</h3>
+<p>The output of <code>squeue</code> provides key details about jobs in the queue. This is what each column means:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>JOBID</code></td>
+<td>Unique identifier for the job.</td>
+</tr>
+<tr>
+<td><code>PARTITION</code></td>
+<td>Queue/partition where the job is submitted.</td>
+</tr>
+<tr>
+<td><code>NAME</code></td>
+<td>Name of the job (from the job script or <code>--job-name</code>).</td>
+</tr>
+<tr>
+<td><code>USER</code></td>
+<td>User who submitted the job.</td>
+</tr>
+<tr>
+<td><code>ST</code></td>
+<td>Current job status (e.g., <code>R</code> for running, <code>PD</code> for pending, <code>CG</code> for completing).</td>
+</tr>
+<tr>
+<td><code>TIME</code></td>
+<td>Time the job has been running (or pending).</td>
+</tr>
+<tr>
+<td><code>NODES</code></td>
+<td>Number of nodes requested or assigned.</td>
+</tr>
+<tr>
+<td><code>NODELIST(REASON)</code></td>
+<td>Node(s) the job is running on or reason why it is pending.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Dartmouth Discovery Cluster</p>
+<p>Typical reasons for wait times in the queue include:</p>
+<ul>
+<li><strong>QOSGrpGRES</strong>: Waiting for specific resources (e.g., GPUs) in the requested Quality of Service group.</li>
+<li><strong>PartitionTimeLimit</strong>: Job exceeds the time limit set for the partition or resources are freeing up.</li>
+<li><strong>JobArrayTaskLimit</strong>: Reached the limit on the number of concurrent jobs in a job array.</li>
+<li><strong>Priority</strong>: Jobs with lower priority wait behind those with higher priority based on scheduling policies.</li>
+</ul>
+</div>
+<h3 id="commonly-used-sbatch-submit-script-commands">Commonly Used <code>sbatch</code> Submit Script Commands</h3>
+<p>These are explanations for the most frequently used Slurm <code>sbatch</code> submit script commands. They are used in Slurm job scripts to configure resource requests and job parameters. Adjusting these options ensures your job runs efficiently on a cluster.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#SBATCH -J JOB_NAME</code></td>
+<td>Sets the job's name to <code>JOB_NAME</code>, useful for identification and tracking.</td>
+<td><code>#SBATCH -J my_job</code></td>
+</tr>
+<tr>
+<td><code>#SBATCH --partition JOB_PARTITION</code></td>
+<td>Specifies the partition <code>JOB_PARTITION</code> where the job should run.</td>
+<td><code>#SBATCH --partition gpuq</code></td>
+</tr>
+<tr>
+<td><code>#SBATCH --gres=gpu:N</code></td>
+<td>Requests N GPUs for each node.</td>
+<td><code>#SBATCH --gres=gpu:1</code></td>
+</tr>
+<tr>
+<td><code>#SBATCH -o FILE_NAME</code></td>
+<td>Redirects standard output to a file (<code>log.out</code>) in the current directory.</td>
+<td><code>#SBATCH -o ./log.out</code></td>
+</tr>
+<tr>
+<td><code>#SBATCH -e FILE_NAME</code></td>
+<td>Redirects standard error to a file (<code>log.err</code>) in the current directoty.</td>
+<td><code>#SBATCH -e ./log.err</code></td>
+</tr>
+<tr>
+<td><code>#SBATCH --nodes=N</code></td>
+<td>Requests N compute nodes for the job.</td>
+<td><code>#SBATCH --nodes=1</code></td>
+</tr>
+<tr>
+<td><code>#SBATCH --ntasks-per-node=N</code></td>
+<td>Specifies N tasks (MPI processes) per node, set to one for serial jobs.</td>
+<td><code>#SBATCH --ntasks-per-node=1</code></td>
+</tr>
+<tr>
+<td><code>#SBATCH --cpus-per-task=N</code></td>
+<td>Requests N CPU cores per task.</td>
+<td><code>#SBATCH --cpus-per-task=1</code></td>
+</tr>
+<tr>
+<td><code>#SBATCH --time=HH:MM:SS</code></td>
+<td>Sets a time limit for the job.</td>
+<td><code>#SBATCH --time=00:20:00</code></td>
+</tr>
+</tbody>
+</table>
 
 
-<span class="md-tag">Dartmouth Infrastructure</span></h2>
-  <ul>
-    
-      <li>
-        <a href="../hpc/discovery-getting-started/">
-          Discovery Cluster
-        </a>
-      </li>
-    
-    
-  </ul>
-
-
-
-  <h2 id="tag:research-tools">
-
-
-<span class="md-tag">Research Tools</span></h2>
-  <ul>
-    
-      <li>
-        <a href="../hpc/hpc-usage-basics/">
-          HPC Basics
-        </a>
-      </li>
-    
-      <li>
-        <a href="../hpc/slurm-usage-basics/">
-          Slurm Basics
-        </a>
-      </li>
-    
-      <li>
-        <a href="../software/entity/">
-          entity
-        </a>
-      </li>
-    
-      <li>
-        <a href="../software/jupyter-notebooks/">
-          jupyter notebooks
-        </a>
-      </li>
-    
-    
-  </ul>
 
 
 
 
 
-
-
+  
+  
 
 
 
@@ -751,10 +858,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "toc.integrate", "content.code.annotate", "content.code.copy", "navigation.indexes", "content.tooltips", "header.autohide"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "toc.integrate", "content.code.annotate", "content.code.copy", "navigation.indexes", "content.tooltips", "header.autohide"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
