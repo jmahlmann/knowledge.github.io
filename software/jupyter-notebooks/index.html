@@ -641,22 +641,26 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip<span class="w"> </span>install<span class="w"> </span>nt2py
 </span></code></pre></div></p>
 </div>
-<p>To launch a <em>Jupyter</em> notebook, execute the following in your Discovery shell:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>jupyter<span class="w"> </span>notebook<span class="w"> </span>--no-browser<span class="w"> </span>--ip<span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-i<span class="k">)</span>
-</span></code></pre></div></p>
-<p>Once the notebook starts, you will receive information about the IP address and port used to connect to the notebook (e.g., of the form <em>127.0.0.1:888x</em>), as well as a token that will be used for secured access.</p>
-<p><strong>In a new shell</strong> on your local machine, establish a new connection to the discovery cluster with additional port forwarding (connecting directly to the <em>Jupyter</em> notebook), for example like:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ssh<span class="w"> </span>-L<span class="w"> </span>888x:127.0.0.1:888x<span class="w"> </span>discovery
-</span></code></pre></div>
-<p>Be sure to update the IP address and port number as generated in the output after launching your notebook. Once the connection is established, you can open the <em>Jupyter</em> notebook in your web browser (e.g., Chrome) by navigating to the following web address:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>http://localhost:888x/
-</span></code></pre></div>
-<p>You can now use a <em>Jupyter</em> notebook running on ths discovery cluster from your web browser. With direct access to all the data stored in your lab space.</p>
 <div class="admonition note">
 <p class="admonition-title">Dartmouth Discovery Cluster</p>
 <p>To avoid running computations on login nodes and slowing down the system for other users, launch your <em>Jupyter</em> notbook in an interactive session. For example, you can use the following command to request four CPU cores with asssiated memory:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>srun<span class="w"> </span>--nodes<span class="o">=</span><span class="m">1</span><span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">1</span><span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">4</span><span class="w"> </span>--pty<span class="w"> </span>/bin/bash
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>srun<span class="w"> </span>--nodes<span class="o">=</span><span class="m">1</span><span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">1</span><span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">4</span><span class="w"> </span>--pty<span class="w"> </span>/bin/bash
 </span></code></pre></div></p>
+</div>
+<p>To launch a <em>Jupyter</em> notebook, execute the following in your Discovery shell:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>jupyter<span class="w"> </span>notebook<span class="w"> </span>--no-browser<span class="w"> </span>--ip<span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-i<span class="k">)</span>
+</span></code></pre></div></p>
+<p>Once the notebook starts, you will receive information about the IP address and port used to connect to the notebook (e.g., of the form <em>127.0.0.1:888x</em>), as well as a token that will be used for secured access.</p>
+<p><strong>In a new shell</strong> on your local machine, establish a new connection to the discovery cluster with additional port forwarding (connecting directly to the <em>Jupyter</em> notebook), for example like:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ssh<span class="w"> </span>-L<span class="w"> </span>888x:127.0.0.1:888x<span class="w"> </span>discovery
+</span></code></pre></div>
+<p>Be sure to update the IP address and port number as generated in the output after launching your notebook. Once the connection is established, you can open the <em>Jupyter</em> notebook in your web browser (e.g., Chrome) by navigating to the following web address:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>http://localhost:888x/
+</span></code></pre></div>
+<p>You can now use a <em>Jupyter</em> notebook running on ths discovery cluster from your web browser. With direct access to all the data stored in your lab space.</p>
+<div class="admonition warning">
+<p class="admonition-title">Windows Users</p>
+<p>When attempting to establish an SSH tunnel for accessing a Jupyter Notebook on a remote cluster, Windows users may encounter a "permission denied" error related to port usage. This can often be caused by firewall or antivirus software blocking the connection. If issues persist, check your firewall settings and explicitly allow incoming and outgoing connections for the chosen local port (e.g., 8888 or 4242). Configure rules for allowing port usage and confirm no other application is using the port. In some cases, switching to a less commonly used port (e.g., 4242) may resolve conflicts with background services or security software.</p>
 </div>
 
 
