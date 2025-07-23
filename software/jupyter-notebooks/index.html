@@ -487,6 +487,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Jupyter Notebboks on Dartmouth&#39;s Discovery Cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-notebooks-via-dartmouth-ondemand" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jupyter Notebooks via Dartmouth OnDemand
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-notebooks-via-shell-and-ssh-tunnels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jupyter Notebooks via Shell and SSH Tunnels
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -668,50 +692,68 @@
   <h1>jupyter notebooks</h1>
 
 <p>This guide will explore the process of setting up and <a href="https://services.dartmouth.edu/TDClient/1806/Portal/KB/ArticleDet?ID=124517">using Jupyter notebooks remotely</a> on <a href="../../hpc/discovery-getting-started/">Dartmouth's Discovery</a> computing cluster, for example to create visualizations for the <a href="../entity/">entity</a> code. Whether you are analyzing simulation data, creating plots, or debugging code, remote <em>Jupyter</em> notebooks provide a flexible and interactive environment for your research needs.</p>
-<h3 id="jupyter-notebboks-on-dartmouths-discovery-cluster">Jupyter Notebboks on Dartmouth's Discovery Cluster</h3>
+<h2 id="jupyter-notebboks-on-dartmouths-discovery-cluster">Jupyter Notebboks on Dartmouth's Discovery Cluster<a class="headerlink" href="#jupyter-notebboks-on-dartmouths-discovery-cluster" title="Permanent link">&para;</a></h2>
 <p>Dartmouth research computing <a href="https://services.dartmouth.edu/TDClient/1806/Portal/KB/ArticleDet?ID=124517">documents</a> how to remotely access <em>Jupyter</em> notebooks. In the following, we will review the key steps. In your Discovery shell, activate <em>conda</em>:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">source</span><span class="w"> </span>/optnfs/common/miniconda3/etc/profile.d/conda.sh
 </span></code></pre></div>
-<p>To avoid this command for each <em>Jupyter</em> instance, you can add it to your <em>~/.bashrc</em> file on Discovery. This environment is set up each time a new shell logs in to the cluster.</p>
-<div class="admonition note">
-<p class="admonition-title">Dartmouth Discovery Cluster</p>
-<p>To avoid running computations on login nodes and slowing down the system for other users, launch your <em>Jupyter</em> notbook in an interactive session. For example, you can use the following command to request four CPU cores with asssiated memory:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>srun<span class="w"> </span>--nodes<span class="o">=</span><span class="m">1</span><span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">1</span><span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">4</span><span class="w"> </span>--pty<span class="w"> </span>/bin/bash
-</span></code></pre></div></p>
-</div>
+<p>To avoid this command for each <em>Jupyter</em> instance, you can add it to your <em>~/.bashrc</em> file on Discovery. This environment is set up each time a new shell logs in to the cluster. The conda environment can be customized as follows:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">EPaCO group</label><label for="__tabbed_1_2">General Users</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>If you have access to the EPaCO lab space and would like to access environments with pre-loaded packages for post-processing of entity data, you can activate:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>/dartfs/rc/lab/E/EPaCO/envs/entity
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>/dartfs/rc/lab/E/EPaCO/envs/entity
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
 <p>First time users should create a new conda environment for using with <em>Jupyter</em> notebooks:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>jupyter<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7<span class="w"> </span>anaconda
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>jupyter<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7<span class="w"> </span>anaconda
 </span></code></pre></div>
 <p>Returning users can activate the custom environment by typing </p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>jupyter
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>jupyter
 </span></code></pre></div>
 <p>In this environment, you can install custom python packages that will be available for the kernels of remotely accessed notebooks.</p>
 <div class="admonition note">
 <p class="admonition-title">Research with entity</p>
 <p>To install the <a href="https://entity-toolkit.github.io/wiki/getting-started/vis/#nt2py">visualization package of the entity toolkit</a>, you can run:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pip<span class="w"> </span>install<span class="w"> </span>nt2py
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>nt2py
 </span></code></pre></div></p>
 </div>
 </div>
 </div>
 </div>
+<h3 id="jupyter-notebooks-via-dartmouth-ondemand">Jupyter Notebooks via Dartmouth OnDemand<a class="headerlink" href="#jupyter-notebooks-via-dartmouth-ondemand" title="Permanent link">&para;</a></h3>
+<p><a href="https://ood.dartmouth.edu/pun/sys/dashboard/">Dartmouth OnDemand</a> provides seamless, browser-based access to Jupyter Notebooks on Discovery, eliminating the need for <a href="#jupyter-notebooks-via-shell-and-ssh-tunnels">Jupyter Notebooks via Shell and SSH Tunnels</a>. You can select the Jupyter Notebook sessions and launch it as follows:</p>
+<ol>
+<li><strong>Account</strong>: Select <code>free</code>.</li>
+<li><strong>Partition</strong>: Choose <code>standard</code>.</li>
+<li><strong>Number of hours</strong>: Set to <code>1</code> (or longer if needed).</li>
+<li><strong>Num Cores</strong>: Enter <code>8</code> (as needed).</li>
+<li><strong>Node type</strong>: Select <code>any</code> for fastest start time.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">First Time Users</p>
+<p>First time users need to make the conda environment available to the Jupyter sessions. In a discovery shell, run:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>/dartfs/rc/lab/E/EPaCO/envs/entity
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>entity<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;Python (entity)&quot;</span>
+</span></code></pre></div></p>
+</div>
+<p>Once your session has started, you can connect to it and use Jupyter directly on the cluster, including seamless access to your data.</p>
+<h3 id="jupyter-notebooks-via-shell-and-ssh-tunnels">Jupyter Notebooks via Shell and SSH Tunnels<a class="headerlink" href="#jupyter-notebooks-via-shell-and-ssh-tunnels" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Dartmouth Discovery Cluster</p>
+<p>To avoid running computations on login nodes and slowing down the system for other users, launch your <em>Jupyter</em> notbook in an interactive session. For example, you can use the following command to request four CPU cores with asssiated memory:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>srun<span class="w"> </span>--nodes<span class="o">=</span><span class="m">1</span><span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">1</span><span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">4</span><span class="w"> </span>--pty<span class="w"> </span>/bin/bash
+</span></code></pre></div></p>
+</div>
 <p>To launch a <em>Jupyter</em> notebook, execute the following in your Discovery shell:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>jupyter<span class="w"> </span>notebook<span class="w"> </span>--no-browser<span class="w"> </span>--ip<span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-i<span class="k">)</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>jupyter<span class="w"> </span>notebook<span class="w"> </span>--no-browser<span class="w"> </span>--ip<span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-i<span class="k">)</span>
 </span></code></pre></div></p>
 <p>Once the notebook starts, you will receive information about the IP address and port used to connect to the notebook (e.g., of the form <em>127.0.0.1:888x</em>), as well as a token that will be used for secured access.</p>
 <p><strong>In a new shell</strong> on your local machine, establish a new connection to the discovery cluster with additional port forwarding (connecting directly to the <em>Jupyter</em> notebook), for example like:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ssh<span class="w"> </span>-L<span class="w"> </span>888x:127.0.0.1:888x<span class="w"> </span>discovery
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ssh<span class="w"> </span>-L<span class="w"> </span>888x:127.0.0.1:888x<span class="w"> </span>discovery
 </span></code></pre></div>
 <p>Be sure to update the IP address and port number as generated in the output after launching your notebook. Once the connection is established, you can open the <em>Jupyter</em> notebook in your web browser (e.g., Chrome) by navigating to the following web address:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>http://localhost:888x/
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>http://localhost:888x/
 </span></code></pre></div>
 <p>You can now use a <em>Jupyter</em> notebook running on ths discovery cluster from your web browser. With direct access to all the data stored in your lab space.</p>
 <div class="admonition warning">
