@@ -639,7 +639,7 @@
 
 <p><a href="https://www.paraview.org/">ParaView</a> is an open-source, multi-platform data analysis and visualization application. It is widely used in scientific research for visualizing large-scale simulation and experimental data in 2D and 3D, supporting interactive exploration, quantitative analysis, and high-quality rendering. ParaView can leverage GPUs to accelerate the exploration and visualization of large datasets.</p>
 <h2 id="paraview-on-dartmouths-discovery-cluster">ParaView on Dartmouth's Discovery Cluster<a class="headerlink" href="#paraview-on-dartmouths-discovery-cluster" title="Permanent link">&para;</a></h2>
-<p><a href="https://ood.dartmouth.edu/pun/sys/dashboard/">Dartmouth OnDemand</a> provides seamless, browser-based access to ParaView on Discovery (including GPU support). You can select the ParaView sessions and launch it as follows:</p>
+<p><a href="https://rc.dartmouth.edu/hpc/ood/">Dartmouth OnDemand</a> provides seamless, browser-based access to ParaView on Discovery (including GPU support). You can select the ParaView sessions and launch it as follows:</p>
 <ol>
 <li><strong>Account</strong>: Select <code>free</code>.</li>
 <li><strong>Partition</strong>: Choose <code>ood</code> by default.</li>
@@ -647,7 +647,7 @@
 <li><strong>Num Cores</strong>: Enter <code>8</code> (as needed).</li>
 <li><strong>Node type</strong>: Select <code>any</code> for fastest start time, but <code>a100</code> will be better for GPU visualizations </li>
 </ol>
-<p>Once your session has started, you can connect to it and use ParaView directly on the cluster, including seamless access to your data.</p>
+<p>Once your session has started, you can connect to it and use ParaView directly on the cluster, including seamless access to your data. Check out the <a href="https://rc.dartmouth.edu/hpc/ood/paraview/">Dartmouth OnDemand documentation</a> for further information.</p>
 <h3 id="helpful-plugins-and-workflows">Helpful Plugins and Workflows<a class="headerlink" href="#helpful-plugins-and-workflows" title="Permanent link">&para;</a></h3>
 <p>For advanced 3D volume renderings in ParaView, the <strong>pvNVIDIA IndeX</strong> plugin can be very helpful. To enable it, go to <strong>Tools → Manage Plugins</strong> and locate the plugin in the list. Once loaded, it allows you to leverage GPU-accelerated rendering for large volumetric datasets, improving both performance and interactivity.</p>
 
