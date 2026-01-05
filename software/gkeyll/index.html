@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#gkeyll-quick-start-on-discovery" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -560,6 +565,18 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Gkeyll
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -570,6 +587,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gkeyll-quick-start-on-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gkeyll Quick-Start on Discovery
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -711,6 +754,14 @@
   <h1>Gkeyll</h1>
 
 <p>The <a href="https://gkeyll.readthedocs.io/en/latest/index.html">Gkeyll</a> simulation framework is a modular, multi-scale, multi-physics code base developed for simulations in plasma physics, space physics, general relativity, and high-energy astrophysics. The core is written in C with a lightweight design and minimal external dependencies, complemented by a Lua scripting layer (via the Lua–C API) for flexible specification of simulation inputs. The framework is organized hierarchically, with shared infrastructure for grids, parallelism, I/O, and common numerical operations, and a suite of physics solvers built on top. These include finite-volume solvers for hyperbolic PDE systems (e.g. relativistic multi-fluid dynamics, Maxwell and Einstein equations), modal discontinuous Galerkin solvers for continuum kinetic models such as Vlasov–Maxwell, Vlasov–Poisson, gyrokinetics, and parallel-kinetic–perpendicular-moment systems, and supporting tools for ODE integration, Poisson solvers, and curved-space geometries relevant to astrophysical and fusion applications.</p>
+<h3 id="gkeyll-quick-start-on-discovery">Gkeyll Quick-Start on Discovery<a class="headerlink" href="#gkeyll-quick-start-on-discovery" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Discovery Cluster</p>
+<p>Compilation of entity on Discovery's login node can be slow at times. If you encounter long compilation times, consider building the code in an interactive session, requested for example like this:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>srun<span class="w"> </span>--nodes<span class="o">=</span><span class="m">1</span><span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">1</span><span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">16</span><span class="w"> </span>--pty<span class="w"> </span>/bin/bash
+</span></code></pre></div></p>
+</div>
+<p><strong>Work in Progress--Coming Soon!</strong></p>
 
 
 
