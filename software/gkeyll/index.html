@@ -811,7 +811,9 @@ This step builds and installs third-party libraries needed by Gkeyll. From the b
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>srun<span class="w"> </span>--nodes<span class="o">=</span><span class="m">1</span><span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">1</span><span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">16</span><span class="w"> </span>--pty<span class="w"> </span>/bin/bash
 </span></code></pre></div></p>
 </div>
-<p>After installation, the gkeyll executable will be available under the specified prefix. You can find a simple example simulation with the Vlasov module in the <a href="https://gkeyll.readthedocs.io/en/latest/quickstart.html#a-simple-texttt-vlasov-simulation">Gkeyll documentation</a>.</p>
+<p>After installation, the Gkeyll executable will be available under the specified prefix. You can find a simple example simulation with the Vlasov module in the <a href="https://gkeyll.readthedocs.io/en/latest/quickstart.html#a-simple-texttt-vlasov-simulation">Gkeyll documentation</a>. In an interactive session, running the Gkeyll example would require, for instance:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>./gkeyll<span class="w"> </span>rt_vlasov_twostream_p2.lua
+</span></code></pre></div></p>
 <div class="admonition tip gkeyll post-processing">
 <p class="admonition-title">Tip</p>
 <p>Post-processing of Gkeyll output is provided via <a href="https://github.com/ammarhakim/postgkyl">PostGkeyll</a>, the respective python packages are available if you use the EPaCO python kernel <em>entity</em> (see also <a href="../jupyter-notebooks/">Jupyter Notebook</a> introduction).</p>
