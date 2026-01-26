@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://jmahlmann.github.io/knowledge.github.io/software/paraview/">
+        <link rel="canonical" href="https://jmahlmann.github.io/knowledge.github.io/software/pluto/">
       
       
-        <link rel="prev" href="../vscode/">
+        <link rel="prev" href="../gkeyll/">
       
       
-        <link rel="next" href="../../tags/">
+        <link rel="next" href="../jupyter-notebooks/">
       
       
       <link rel="icon" href="../../media/images/logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>ParaView - Computational Plasma Physics @Dartmouth Knowledge Base</title>
+        <title>gPLUTO - Computational Plasma Physics @Dartmouth Knowledge Base</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#paraview-on-dartmouths-discovery-cluster" class="md-skip">
+        <a href="#gpluto-on-dartmouths-discovery-cluster" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ParaView
+              gPLUTO
             
           </span>
         </div>
@@ -579,10 +579,29 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../pluto/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    gPLUTO
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -592,6 +611,48 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gpluto-on-dartmouths-discovery-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      gPLUTO on Dartmouth's Discovery Cluster
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="gPLUTO on Dartmouth&#39;s Discovery Cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation-and-quickstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation and Quickstart
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -667,29 +728,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    ParaView
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../paraview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -699,48 +741,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#paraview-on-dartmouths-discovery-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      ParaView on Dartmouth's Discovery Cluster
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ParaView on Dartmouth&#39;s Discovery Cluster">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#helpful-plugins-and-workflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Helpful Plugins and Workflows
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -800,21 +800,46 @@
 
 
 
-  <h1>ParaView</h1>
+  <h1>gPLUTO</h1>
 
-<p><a href="https://www.paraview.org/">ParaView</a> is an open-source, multi-platform data analysis and visualization application. It is widely used in scientific research for visualizing large-scale simulation and experimental data in 2D and 3D, supporting interactive exploration, quantitative analysis, and high-quality rendering. ParaView can leverage GPUs to accelerate the exploration and visualization of large datasets.</p>
-<h2 id="paraview-on-dartmouths-discovery-cluster">ParaView on Dartmouth's Discovery Cluster<a class="headerlink" href="#paraview-on-dartmouths-discovery-cluster" title="Permanent link">&para;</a></h2>
-<p><a href="https://rc.dartmouth.edu/hpc/ood/">Dartmouth OnDemand</a> provides seamless, browser-based access to ParaView on Discovery (including GPU support). You can select the ParaView sessions and launch it as follows:</p>
-<ol>
-<li><strong>Account</strong>: Select <code>free</code>.</li>
-<li><strong>Partition</strong>: Choose <code>ood</code> by default.</li>
-<li><strong>Number of hours</strong>: Set to <code>1</code> (or longer if needed).</li>
-<li><strong>Num Cores</strong>: Enter <code>8</code> (as needed).</li>
-<li><strong>Node type</strong>: Select <code>any</code> for fastest start time, but <code>a100</code> will be better for GPU visualizations </li>
-</ol>
-<p>Once your session has started, you can connect to it and use ParaView directly on the cluster, including seamless access to your data. Check out the <a href="https://rc.dartmouth.edu/hpc/ood/paraview/">Dartmouth OnDemand documentation</a> for further information.</p>
-<h3 id="helpful-plugins-and-workflows">Helpful Plugins and Workflows<a class="headerlink" href="#helpful-plugins-and-workflows" title="Permanent link">&para;</a></h3>
-<p>For advanced 3D volume renderings in ParaView, the <strong>pvNVIDIA IndeX</strong> plugin can be very helpful. To enable it, go to <strong>Tools → Manage Plugins</strong> and locate the plugin in the list. Once loaded, it allows you to leverage GPU-accelerated rendering for large volumetric datasets, improving both performance and interactivity.</p>
+<p><a href="https://plutocode.ph.unito.it/pluto-gpu.html"><strong>gPLUTO</strong></a> is the next‑generation, GPU‑ready evolution of the PLUTO MHD code: a full C++ rewrite designed from the ground up for exascale computing on CPUs and GPUs. Developed within the EU <a href="https://www.space-coe.eu/">SPACE Center of Excellence</a>, <strong>gPLUTO</strong> keeps the proven PLUTO philosophy while modernizing the architecture for GPU-accelerated HPC. The code already supports Cartesian, cylindrical, and spherical geometries; HD, MHD, RHD, and RMHD physics; and RK time stepping, with diffusion physics, particles, GR, and AMR actively under development. Although not yet feature‑complete compared to PLUTO, <strong>gPLUTO</strong> is rapidly evolving and is positioned as the long‑term production platform for large‑scale plasma and astrophysical simulations. The <a href="https://gitlab.com/PLUTO-code/gPLUTO">public version (v0.88, Nov 2025) is available on GitLab</a>, along with a hands‑on tutorial to get started quickly.</p>
+<h3 id="gpluto-on-dartmouths-discovery-cluster">gPLUTO on Dartmouth's Discovery Cluster<a class="headerlink" href="#gpluto-on-dartmouths-discovery-cluster" title="Permanent link">&para;</a></h3>
+<p>We provide libraries to fulfill <strong>gPLUTO</strong>'s dependencies on Discovery. You can load the required modules by running the following in your Discovery shell:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">A100 GPUs</label><label for="__tabbed_1_2">CPUs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module<span class="w"> </span>use<span class="w"> </span>--append<span class="w"> </span>/dartfs/rc/lab/E/EPaCO/.mods
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>module<span class="w"> </span>load<span class="w"> </span>pluto/cuda/mpi/a100
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>module<span class="w"> </span>use<span class="w"> </span>--append<span class="w"> </span>/dartfs/rc/lab/E/EPaCO/.mods
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>module<span class="w"> </span>load<span class="w"> </span>pluto/host/mpi/zen
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Discovery Cluster</p>
+<p>If you do not have access to the <strong>EPaCO</strong> lab space, please check our groups' <a href="../../hpc/discovery-getting-started/">allocations and user policies</a>.</p>
+</div>
+<h4 id="installation-and-quickstart">Installation and Quickstart<a class="headerlink" href="#installation-and-quickstart" title="Permanent link">&para;</a></h4>
+<p>Follow the installation instructions in the <a href="https://gitlab.com/PLUTO-code/gPLUTO#installation"><strong>gPLUTO</strong> documentation</a>. When selecting a makefile, the architecture preset <em>linux.mpicxx.defs</em>. In the EPaCO‑provided environment, the correct GPU‑enabled MPI distribution will be detected automatically.</p>
+<div class="admonition note">
+<p class="admonition-title">Running gPLUTO on GPU nodes</p>
+<p>For interactive compilation and execution of <strong>gPLUTO</strong>, it is best to request a GPU node. You can do so with:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>srun<span class="w"> </span>--partition<span class="o">=</span>gpuq<span class="w"> </span>--nodes<span class="o">=</span><span class="m">1</span><span class="w"> </span>--gres<span class="o">=</span>gpu:1<span class="w"> </span>--time<span class="o">=</span><span class="m">01</span>:00:00<span class="w"> </span>--pty<span class="w"> </span>/bin/bash
+</span></code></pre></div>
+<p>If you have access to EPaCO resources, you can add <em>--account=epaco</em>, or respective accounts of other groups.</p>
+</div>
+<p><strong>gPLUTO</strong> provides the Python library <a href="https://pypluto.readthedocs.io/en/stable/index.html"><strong>pyPLUTO</strong></a> for plotting and visualizing simulation data. The <strong>EPaCO conda environment</strong> already includes the required Python packages, so no additional installation is needed.</p>
+<p>A minimal example to load and inspect PLUTO output data is shown below:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pyPLUTO</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pp</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">D</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">Load</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="nb">vars</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">datatype</span><span class="o">=</span><span class="s1">&#39;flt&#39;</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+</span></code></pre></div>
+<p>This command loads all available field variables from the current directory and prints a summary of the dataset. The <em>Load</em> function and related tools are documented in detail in the <a href="https://pypluto.readthedocs.io/en/stable/index.html"><strong>pyPLUTO</strong></a> documentation.</p>
 
 
 
