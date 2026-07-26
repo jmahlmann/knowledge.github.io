@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://jmahlmann.github.io/knowledge.github.io/software/jupyter-notebooks/">
+        <link rel="canonical" href="https://jmahlmann.github.io/knowledge.github.io/software/einsteintoolkit/">
       
       
-        <link rel="prev" href="../einsteintoolkit/">
+        <link rel="prev" href="../entity/">
       
       
-        <link rel="next" href="../adios2/">
+        <link rel="next" href="../jupyter-notebooks/">
       
       
       <link rel="icon" href="../../media/images/logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>jupyter notebooks - EPaCO @Dartmouth Knowledge Base</title>
+        <title>Einstein Toolkit - EPaCO @Dartmouth Knowledge Base</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jupyter-notebboks-on-dartmouths-discovery-cluster" class="md-skip">
+        <a href="#einstein-toolkit-on-dartmouths-discovery-cluster" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              jupyter notebooks
+              Einstein Toolkit
             
           </span>
         </div>
@@ -575,28 +575,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../einsteintoolkit/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Einstein Toolkit
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -611,7 +589,7 @@
           
   
   <span class="md-ellipsis">
-    jupyter notebooks
+    Einstein Toolkit
     
   </span>
   
@@ -623,7 +601,7 @@
         
   
   <span class="md-ellipsis">
-    jupyter notebooks
+    Einstein Toolkit
     
   </span>
   
@@ -644,28 +622,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#jupyter-notebboks-on-dartmouths-discovery-cluster" class="md-nav__link">
+  <a href="#einstein-toolkit-on-dartmouths-discovery-cluster" class="md-nav__link">
     <span class="md-ellipsis">
-      Jupyter Notebboks on Dartmouth's Discovery Cluster
+      Einstein Toolkit on Dartmouth's Discovery Cluster
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Jupyter Notebboks on Dartmouth&#39;s Discovery Cluster">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulation management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulation management">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#jupyter-notebooks-via-dartmouth-ondemand" class="md-nav__link">
+  <a href="#running-a-simulation" class="md-nav__link">
     <span class="md-ellipsis">
-      Jupyter Notebooks via Dartmouth OnDemand
+      Running a simulation
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#jupyter-notebooks-via-shell-and-ssh-tunnels" class="md-nav__link">
+  <a href="#following-simulation-output" class="md-nav__link">
     <span class="md-ellipsis">
-      Jupyter Notebooks via Shell and SSH Tunnels
+      Following simulation output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-a-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting a simulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-useful-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other useful commands
     </span>
   </a>
   
@@ -680,6 +685,28 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jupyter-notebooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    jupyter notebooks
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -805,77 +832,134 @@
 
 
 
-  <h1>jupyter notebooks</h1>
+  <h1>Einstein Toolkit</h1>
 
-<p>This guide will explore the process of setting up and <a href="https://services.dartmouth.edu/TDClient/1806/Portal/KB/ArticleDet?ID=124517">using Jupyter notebooks remotely</a> on <a href="../../hpc/discovery-getting-started/">Dartmouth's Discovery</a> computing cluster, for example to create visualizations for the <a href="../entity/">entity</a> code. Whether you are analyzing simulation data, creating plots, or debugging code, remote <em>Jupyter</em> notebooks provide a flexible and interactive environment for your research needs.</p>
-<h2 id="jupyter-notebboks-on-dartmouths-discovery-cluster">Jupyter Notebboks on Dartmouth's Discovery Cluster<a class="headerlink" href="#jupyter-notebboks-on-dartmouths-discovery-cluster" title="Permanent link">&para;</a></h2>
-<p>Dartmouth research computing <a href="https://services.dartmouth.edu/TDClient/1806/Portal/KB/ArticleDet?ID=124517">documents</a> how to remotely access <em>Jupyter</em> notebooks. In the following, we will review the key steps. In your Discovery shell, activate <em>conda</em>:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">source</span><span class="w"> </span>/optnfs/common/miniconda3/etc/profile.d/conda.sh
+<p>The <a href="https://einsteintoolkit.org/index.html">Einstein Toolkit</a> is a community-driven, open-source software platform for research in relativistic astrophysics and gravitational physics. It is built on the <a href="https://cactuscode.org">Cactus</a> framework and bundles 270+ components ("thorns") covering spacetime evolution (McLachlan, Lean, Baikal), relativistic (magneto-)hydrodynamics (GRHydro, IllinoisGRMHD), initial data, analysis, and computational infrastructure, together with tools for simulation management and visualization. Useful upstream references: <a href="https://einsteintoolkit.org/documentation/ThornGuide.php">List of available thorns</a>, <a href="https://einsteintoolkit.org/tutorial.html">documentation and tutorials</a>.</p>
+<h3 id="einstein-toolkit-on-dartmouths-discovery-cluster">Einstein Toolkit on Dartmouth's Discovery Cluster<a class="headerlink" href="#einstein-toolkit-on-dartmouths-discovery-cluster" title="Permanent link">&para;</a></h3>
+<p>We maintain a shared installation together with all dependencies in a <a href="https://spack.io">Spack</a> environment. Load it with:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">source</span><span class="w"> </span>/dartfs/rc/lab/E/EPaCO/activate-cactus.sh
 </span></code></pre></div>
-<p>To avoid this command for each <em>Jupyter</em> instance, you can add it to your <em>~/.bashrc</em> file on Discovery. This environment is set up each time a new shell logs in to the cluster. The conda environment can be customized as follows:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">EPaCO group</label><label for="__tabbed_1_2">General Users</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>If you have access to the EPaCO lab space and would like to access environments with pre-loaded packages for post-processing of entity data, you can activate:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>/dartfs/rc/lab/E/EPaCO/envs/entity
+<p>Besides putting the required compilers, MPI, and libraries in your environment, this script defines the following variables:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$ET_BASE_PATH</code></td>
+<td>Einstein Toolkit base directory — you manage simulations from here</td>
+</tr>
+<tr>
+<td><code>$ET_USER_THORNS_PATH</code></td>
+<td>User thorns used by the EPaCO group, especially the force-free MHD thorns</td>
+</tr>
+<tr>
+<td><code>$ET_SIMS_PATH</code></td>
+<td>Lab storage for simulation output</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Add it to your shell startup</p>
+<p>If you use the toolkit routinely, add the <code>source</code> line to your <code>~/.bashrc</code>
+so the environment is always available on login.</p>
+</div>
+<h3 id="simulation-management">Simulation management<a class="headerlink" href="#simulation-management" title="Permanent link">&para;</a></h3>
+<p>All commands below are run from inside the base directory:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$ET_BASE_PATH</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<p>First time users should create a new conda environment for using with <em>Jupyter</em> notebooks:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>jupyter<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7<span class="w"> </span>anaconda
+<p>Simulations are driven by <code>simfactory</code>, the Einstein Toolkit's simulation factory. Group-specific thorns (in particular the force-free MHD thorns) live in <code>$ET_USER_THORNS_PATH</code> and are linked into <code>arrangements/UserThorns</code>.</p>
+<h4 id="running-a-simulation">Running a simulation<a class="headerlink" href="#running-a-simulation" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>simfactory/bin/sim<span class="w"> </span>submit<span class="w"> </span>&lt;SIMULATION_NAME&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span>--parfile<span class="o">=</span>&lt;PARAMETER_FILE.par&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>--procs<span class="o">=</span>&lt;TOTAL_CORES&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span>--ppn<span class="o">=</span>&lt;CORES_PER_NODE&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span>--ppn-used<span class="o">=</span>&lt;CORES_PER_NODE_USED&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span>--num-threads<span class="o">=</span>&lt;OPENMP_THREADS_PER_MPI_RANK&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span>--num-smt<span class="o">=</span>&lt;SMT_THREADS_PER_CORE&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span>--walltime<span class="o">=</span>&lt;HH:MM:SS&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span>--machine<span class="w"> </span>discovery
 </span></code></pre></div>
-<p>Returning users can activate the custom environment by typing </p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>jupyter
+<table>
+<thead>
+<tr>
+<th>Placeholder</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;SIMULATION_NAME&gt;</code></td>
+<td>Unique name for this run. A directory of this name is created under <code>$ET_SIMS_PATH</code>; it must not already exist. Use a descriptive, greppable convention, e.g. encoding the physical parameters of the run.</td>
+</tr>
+<tr>
+<td><code>&lt;PARAMETER_FILE.par&gt;</code></td>
+<td>Cactus parameter file defining the physics setup. Group parameter files typically live under <code>$ET_USER_THORNS_PATH/&lt;THORN&gt;/par/</code>.</td>
+</tr>
+<tr>
+<td><code>&lt;TOTAL_CORES&gt;</code></td>
+<td>Total number of cores requested. Combined with <code>--ppn</code> this fixes the node count (<code>nodes = procs / ppn</code>).</td>
+</tr>
+<tr>
+<td><code>&lt;CORES_PER_NODE&gt;</code></td>
+<td>Physical cores available per node on the target partition.</td>
+</tr>
+<tr>
+<td><code>&lt;CORES_PER_NODE_USED&gt;</code></td>
+<td>Cores actually used per node — set below <code>--ppn</code> to leave cores idle (e.g. for extra memory bandwidth per rank).</td>
+</tr>
+<tr>
+<td><code>&lt;OPENMP_THREADS_PER_MPI_RANK&gt;</code></td>
+<td>OpenMP threads per MPI rank. <code>1</code> = pure MPI; larger values give a hybrid MPI/OpenMP layout with <code>ppn-used / num-threads</code> ranks per node.</td>
+</tr>
+<tr>
+<td><code>&lt;SMT_THREADS_PER_CORE&gt;</code></td>
+<td>Hardware threads (hyperthreads) used per core; <code>1</code> disables SMT.</td>
+</tr>
+<tr>
+<td><code>&lt;HH:MM:SS&gt;</code></td>
+<td>Requested wall time. Runs are checkpointed and can be resubmitted to continue beyond the queue limit.</td>
+</tr>
+<tr>
+<td><code>--machine discovery</code></td>
+<td>Selects the Discovery machine configuration in simfactory (queue, submit command, MPI launcher, …).</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Concrete example</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>simfactory/bin/sim<span class="w"> </span>submit<span class="w"> </span>TEST<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>--parfile<span class="o">=</span><span class="nv">$ET_USER_THORNS_PATH</span>/FFOrtho/par/FFOrtho_Dipole_Glitch_2D.par<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>--procs<span class="o">=</span><span class="m">32</span><span class="w"> </span>--ppn<span class="o">=</span><span class="m">32</span><span class="w"> </span>--ppn-used<span class="o">=</span><span class="m">32</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span>--num-threads<span class="o">=</span><span class="m">1</span><span class="w"> </span>--num-smt<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span>--walltime<span class="o">=</span><span class="m">24</span>:00:00<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span>--machine<span class="w"> </span>discovery
 </span></code></pre></div>
-<p>In this environment, you can install custom python packages that will be available for the kernels of remotely accessed notebooks.</p>
-<div class="admonition note">
-<p class="admonition-title">Research with entity</p>
-<p>To install the <a href="https://entity-toolkit.github.io/wiki/getting-started/vis/#nt2py">visualization package of the entity toolkit</a>, you can run:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>nt2py
-</span></code></pre></div></p>
+A single 32-core node, pure MPI (32 ranks), 24 hours of wall time.</p>
 </div>
-</div>
-</div>
-</div>
-<h3 id="jupyter-notebooks-via-dartmouth-ondemand">Jupyter Notebooks via Dartmouth OnDemand<a class="headerlink" href="#jupyter-notebooks-via-dartmouth-ondemand" title="Permanent link">&para;</a></h3>
-<p><a href="https://rc.dartmouth.edu/hpc/ood/">Dartmouth OnDemand</a> provides seamless, browser-based access to Jupyter Notebooks on Discovery, eliminating the need for <a href="#jupyter-notebooks-via-shell-and-ssh-tunnels">Jupyter Notebooks via Shell and SSH Tunnels</a>. You can select the Jupyter Notebook sessions and launch it as follows:</p>
-<ol>
-<li><strong>Account</strong>: Select <code>free</code>.</li>
-<li><strong>Partition</strong>: Choose <code>standard</code>.</li>
-<li><strong>Number of hours</strong>: Set to <code>1</code> (or longer if needed).</li>
-<li><strong>Num Cores</strong>: Enter <code>8</code> (as needed).</li>
-<li><strong>Node type</strong>: Select <code>any</code> for fastest start time.</li>
-</ol>
+<h4 id="following-simulation-output">Following simulation output<a class="headerlink" href="#following-simulation-output" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>simfactory/bin/sim<span class="w"> </span>show-output<span class="w"> </span>--follow<span class="w"> </span>&lt;SIMULATION_NAME&gt;<span class="w"> </span>--machine<span class="w"> </span>discovery
+</span></code></pre></div>
+<p>Streams the standard output of the run (like <code>tail -f</code>). Drop <code>--follow</code> to dump the
+log once and exit.</p>
+<h4 id="deleting-a-simulation">Deleting a simulation<a class="headerlink" href="#deleting-a-simulation" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>simfactory/bin/sim<span class="w"> </span>purge<span class="w"> </span>&lt;SIMULATION_NAME&gt;<span class="w"> </span>--machine<span class="w"> </span>discovery
+</span></code></pre></div>
+<p>Moves the simulation directory out of the simulation store into the simfactory trash.</p>
 <div class="admonition warning">
-<p class="admonition-title">First Time Users</p>
-<p>First time users need to make the conda environment available to the Jupyter sessions. In a discovery shell, run:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>/dartfs/rc/lab/E/EPaCO/envs/entity
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>entity<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;Python (entity)&quot;</span>
-</span></code></pre></div></p>
+<p class="admonition-title">Warning</p>
+<p><code>purge</code> removes the run from the active simulation directory. Make sure any output
+you still need has been copied elsewhere before purging, and double-check the
+simulation name.</p>
 </div>
-<p>Once your session has started, you can connect to it and use Jupyter directly on the cluster, including seamless access to your data. Check out the <a href="https://rc.dartmouth.edu/hpc/ood/jupyter/">Dartmouth OnDemand documentation</a> for further information.</p>
-<h3 id="jupyter-notebooks-via-shell-and-ssh-tunnels">Jupyter Notebooks via Shell and SSH Tunnels<a class="headerlink" href="#jupyter-notebooks-via-shell-and-ssh-tunnels" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Dartmouth Discovery Cluster</p>
-<p>To avoid running computations on login nodes and slowing down the system for other users, launch your <em>Jupyter</em> notbook in an interactive session. For example, you can use the following command to request four CPU cores with asssiated memory:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>srun<span class="w"> </span>--nodes<span class="o">=</span><span class="m">1</span><span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">1</span><span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">4</span><span class="w"> </span>--pty<span class="w"> </span>/bin/bash
-</span></code></pre></div></p>
-</div>
-<p>To launch a <em>Jupyter</em> notebook, execute the following in your Discovery shell:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>jupyter<span class="w"> </span>notebook<span class="w"> </span>--no-browser<span class="w"> </span>--ip<span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-i<span class="k">)</span>
-</span></code></pre></div></p>
-<p>Once the notebook starts, you will receive information about the IP address and port used to connect to the notebook (e.g., of the form <em>127.0.0.1:888x</em>), as well as a token that will be used for secured access.</p>
-<p><strong>In a new shell</strong> on your local machine, establish a new connection to the discovery cluster with additional port forwarding (connecting directly to the <em>Jupyter</em> notebook), for example like:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ssh<span class="w"> </span>-L<span class="w"> </span>888x:127.0.0.1:888x<span class="w"> </span>discovery
+<h4 id="other-useful-commands">Other useful commands<a class="headerlink" href="#other-useful-commands" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>simfactory/bin/sim<span class="w"> </span>list-simulations<span class="w">   </span>--machine<span class="w"> </span>discovery<span class="w"> </span><span class="c1"># all known simulations and their status</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>simfactory/bin/sim<span class="w"> </span>submit<span class="w"> </span>&lt;NAME&gt;<span class="w"> </span>--machine<span class="w"> </span>discovery<span class="w">      </span><span class="c1"># resubmit / continue from checkpoint</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>simfactory/bin/sim<span class="w"> </span>stop<span class="w"> </span>&lt;NAME&gt;<span class="w">  </span>--machine<span class="w"> </span>discovery<span class="w">       </span><span class="c1"># cancel a queued or running job</span>
 </span></code></pre></div>
-<p>Be sure to update the IP address and port number as generated in the output after launching your notebook. Once the connection is established, you can open the <em>Jupyter</em> notebook in your web browser (e.g., Chrome) by navigating to the following web address:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>http://localhost:888x/
-</span></code></pre></div>
-<p>You can now use a <em>Jupyter</em> notebook running on ths discovery cluster from your web browser. With direct access to all the data stored in your lab space.</p>
-<div class="admonition warning">
-<p class="admonition-title">Windows Users</p>
-<p>When attempting to establish an SSH tunnel for accessing a Jupyter Notebook on a remote cluster, Windows users may encounter a "permission denied" error related to port usage. This can often be caused by firewall or antivirus software blocking the connection. If issues persist, check your firewall settings and explicitly allow incoming and outgoing connections for the chosen local port (e.g., 8888 or 4242). Configure rules for allowing port usage and confirm no other application is using the port. In some cases, switching to a less commonly used port (e.g., 4242) may resolve conflicts with background services or security software.</p>
-</div>
 
 
 
